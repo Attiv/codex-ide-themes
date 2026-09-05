@@ -1,0 +1,4 @@
+{"type":"turn_context","payload":{"turn_id":"example-turn","model":"example-model"}}
+{"type":"event_msg","payload":{"type":"token_count","info":{"last_token_usage":{"input_tokens":1000,"cached_input_tokens":800,"output_tokens":100,"reasoning_output_tokens":20,"total_tokens":1100},"total_token_usage":{"input_tokens":1000,"cached_input_tokens":800,"output_tokens":100,"reasoning_output_tokens":20,"total_tokens":1100}}}}
+{"type":"turn_context","payload":{"turn_id":"example-turn","model":"example-model"}}
+{"type":"event_msg","payload":{"type":"token_count","info":{"last_token_usage":{"input_tokens":2000,"cached_input_tokens":1600,"output_tokens":200,"reasoning_output_tokens":50,"total_tokens":2200},"total_token_usage":{"input_tokens":3000,"cached_input_tokens":2400,"output_tokens":300,"reasoning_output_tokens":70,"total_tokens":3300}}}}

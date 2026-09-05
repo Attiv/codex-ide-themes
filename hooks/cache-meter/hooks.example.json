@@ -1,0 +1,15 @@
+{
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"${CODEX_HOME:-$HOME/.codex}/hooks/cache-meter.py\"",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -4,6 +4,10 @@ Eight IDE-inspired light and dark themes for the Codex CLI. The pack uses
 TextMate scopes, terminal-friendly contrast, deterministic UUIDs, and a small
 dependency-free Python generator.
 
+Optional extra: [Codex token/cache usage Hook (中文使用说明)](hooks/cache-meter/README.md)
+prints a per-turn token summary after Codex finishes a response. It is installed
+separately; `./install.sh` still installs only themes.
+
 ## Themes
 
 | Style | Dark | Light |

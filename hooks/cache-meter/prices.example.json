@@ -1,0 +1,10 @@
+{
+  "models": {
+    "gpt-6-astra": {
+      "input_per_m": 0.0,
+      "output_per_m": 0.0,
+      "cache_read_per_m": 0.0,
+      "cache_write_per_m": 0.0
+    }
+  }
+}
