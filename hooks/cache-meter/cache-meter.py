@@ -23,6 +23,7 @@ CODEX_HOME 默认是 ~/.codex。某模型价格全部为 0(或未配置)时，
 import json
 import os
 import sys
+from datetime import datetime
 
 CODEX_HOME = os.path.expanduser(os.environ.get("CODEX_HOME") or "~/.codex")
 PRICES_FILE = os.path.join(CODEX_HOME, "hooks", "prices.json")
@@ -67,6 +68,11 @@ def model_cost(price, usage):
     # input_tokens 是输入总量；缓存命中和缓存写入都是其中的分项。
     fresh_in = max(0, inn - cached - cw)
     return (fresh_in * pi + cached * pc + cw * pw + out * po) / 1_000_000
+
+
+def current_local_timestamp(now=None):
+    """返回 Hook 生成摘要时的本机时间。"""
+    return (now or datetime.now()).strftime("%Y-%m-%d %H:%M:%S")
 
 
 def fmt_cost(usd):
@@ -251,9 +257,9 @@ def fmt_usage_lines(u, indent="  "):
     ]
 
 
-def main():
+def main(raw=None):
     try:
-        raw = sys.stdin.read()
+        raw = sys.stdin.read() if raw is None else raw
         payload = json.loads(raw) if raw.strip() else {}
     except Exception:
         payload = {}
@@ -290,6 +296,7 @@ def main():
         lines.append(f"💰 API 单价估算：未配置 {model} 的价格")
     if model:
         lines.append(f"模型：{model}")
+    lines.append(f"时间：{current_local_timestamp()}")
 
     print(json.dumps({"systemMessage": "\n".join(lines)}, ensure_ascii=False))
     sys.exit(0)

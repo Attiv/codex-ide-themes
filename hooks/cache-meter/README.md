@@ -20,6 +20,7 @@ Hook · 📊 Codex 用量（Token，不是提问次数）
       输出：164
     💰 API 单价估算：未配置 gpt-6-astra 的价格
     模型：gpt-6-astra
+    时间：2026-09-07 18:59:52
 ```
 
 `Hook ·` 和缩进由客户端呈现；脚本输出的是包含多行 `systemMessage` 的 JSON。
@@ -189,7 +190,8 @@ printf '%s\n' '{"transcript_path":"hooks/cache-meter/example-rollout.jsonl"}' \
 ```
 
 预期为 JSON 输出：本次提问 **2 次**内部请求，输入 **3K**，缓存 **2.4K / 80%**，
-未缓存 **600**，输出 **300**（含推理 **70**）。最终示例模型为 `example-model`。
+未缓存 **600**，输出 **300**（含推理 **70**）。最终示例模型为 `example-model`，
+最后一行是 Hook 生成摘要时的本机时间，格式为 `时间：YYYY-MM-DD HH:MM:SS`。
 
 也可以把 `transcript_path` 替换成自己机器上的实际 rollout 文件绝对路径。
 请勿把真实对话日志、`config.toml` 或账户凭据提交到仓库。
